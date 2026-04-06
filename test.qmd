@@ -1,0 +1,83 @@
+---
+title: "QMD Compilation Test"
+format: html
+---
+
+# QMD Compilation Test
+
+This document tests the QMD compilation environment in GitHub Codespaces.
+
+## Code Execution Test
+
+### Python Code
+
+```{python}
+import pandas as pd
+import numpy as np
+
+# Create test data
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Score': [85.5, 92.0, 78.5]
+}
+
+df = pd.DataFrame(data)
+print("Python code executed successfully!")
+print(df)
+```
+
+### R Code (Optional)
+
+```{r}
+# R code execution test
+if (requireNamespace("dplyr", quietly = TRUE)) {
+    library(dplyr)
+    cat("R code executed successfully!\n")
+} else {
+    cat("dplyr package not available\n")
+}
+```
+
+## Math Support
+
+Mathematical formula: $E = mc^2$
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+
+## Table Test
+
+| Name | Age | Score |
+|------|-----|-------|
+| Alice | 25 | 85.5 |
+| Bob | 30 | 92.0 |
+| Charlie | 35 | 78.5 |
+
+## Plot Test
+
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a simple plot
+plt.figure(figsize=(8, 4))
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+plt.plot(x, y, marker='o')
+plt.title('Test Plot')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.show()
+```
+
+## Compilation Instructions
+
+To compile this document:
+
+```bash
+quarto render test.qmd
+```
+
+The output will be an HTML file: `test.html`

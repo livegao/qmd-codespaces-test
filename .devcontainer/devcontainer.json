@@ -1,0 +1,26 @@
+{
+    "name": "QMD Compilation Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "nodeVersion": "18"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.10"
+        },
+        "ghcr.io/devcontainers/features/rust:1": {
+            "version": "stable"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "quarto.quarto",
+                "ms-python.python",
+                "rust-lang.rust-analyzer"
+            ]
+        }
+    },
+    "postCreateCommand": "apt-get update && apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-recommended latexmk && quarto install tinytex",
+    "remoteUser": "vscode"
+}
